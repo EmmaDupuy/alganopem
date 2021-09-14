@@ -1,0 +1,40 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+    background: linear-gradient(to right, #ffb58a, #ff4f63,#ff0065);
+  }
+  .logo{
+    width:100px;
+    height: 100px;
+  }
+  .user-icon{
+    color:#ffffff;
+  }
+  
+  .card-bar{
+      background: linear-gradient(to right, #ff0065, #ff4f63,#ffb58a);
+      margin-top: 50px;
+  }
+  
+  .handle-btn{
+      background-color: #ff4f63;
+      color: white;
+      margin-top: 20px;
+      margin-left: 100px;
+  }
+  
+  .text{
+     margin-left: 10%;
+      margin-top:10px;
+      font-family: roboto;
+      color: #434343;
+  }
+  
+  /* .docName{
+   
+  } */
+  
+  .name{
+      text-transform: uppercase;
+  }
