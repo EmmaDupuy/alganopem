@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HEIN';
+  title = 'Alganopem';
   private apiURL = "https://fhir.eole-consulting.io/api";
   patient: any = {};
   doctor: any = {};

@@ -12,7 +12,7 @@
 }
 
 mat-toolbar {
-  background: linear-gradient(to right, #ffb58a, #ff4f63, #ff0065);
+  background: linear-gradient(to right, #8000ff, #4f8dff, #8ac9ff);
 }
 
 .logo {
@@ -32,7 +32,7 @@ mat-toolbar {
 }
 
 .card-bar {
-  background: linear-gradient(to right, #ff0065, #ff4f63, #ffb58a);
+  background: linear-gradient(to right, #8ac9ff, #4f8dff, #8000ff);
   margin-top: 50px;
   width: 100%;
   padding: 0;
@@ -46,18 +46,42 @@ mat-toolbar {
   font-family: roboto;
 }
 
+.handle-check {
+    margin-top: 20px;
+    margin-left: 100px;
+  }
+
 .handle-btn {
-  background-color: #ff4f63;
-  color: white;
-  margin-top: 20px;
-  margin-left: 100px;
+    background: linear-gradient(#8000ff, #4f8dff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
 }
 
-.text {
-  text-align: center;
-  margin-top: 10px;
+.handle-btn:hover {
+    background: linear-gradient(#8ac9ff, #4f8dff);;
+    color: #8000ff;
+}
+
+.content {
   font-family: roboto;
   color: #434343;
+  text-align: center;
+}
+
+.dropdown{
+    display: inline-block;
+    text-align: center;
+}
+
+.checkboxes{
+    display: inline-block;
+    text-align: center;
 }
 
 table {

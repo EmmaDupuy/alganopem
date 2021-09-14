@@ -1,60 +1,65 @@
 <mat-toolbar>
-    <!-- <button mat-icon-button class="example-icon" color="primary" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button> -->
     <img class='logo' src="assets/logo.png">
     <span class="example-spacer"></span>
-    <input class="example-form" type="text" id="input" matInput placeholder="Recherche" />
+    <span>Notification de retard</span>
     <span class="example-spacer"></span>
     <span class="top-name">{{doctor.name[0].family}}
         {{doctor.name[0].given[0]}}</span>
     <mat-icon class='user-icon'>account_circle</mat-icon>
 </mat-toolbar>
-<div class="text">
-    <table className="table table-unbordered">
-        <tbody>
-            <tr><th><h1 class="titre-retard">Notification de retard</h1></th></tr>
-            <tr>
-                <th>
-                    <p class="docName"><b>Patient <span class="name">{{patient.name[0].family}} {{patient.name[0].given}}</span></b></p>
-                    <p>Heure du rdv :
-                    </p>
-                    <p>
-                        Retard de X minutes
-                    </p>
-                </th>
-                <th>
-                    <form (ngSubmit)="onSubmit()" #retardForm="ngForm">
-                        <input class="handle-btn" type="checkbox" id="10minutes" name="10minutes" value="10">
-                        <label for="vehicle1"> 10 minutes</label><br>
-                        <input class="handle-btn" type="checkbox" id="20minutes" name="20minutes" value="20">
-                        <label for="vehicle1"> 20 minutes</label><br>
-                        <input class="handle-btn" type="checkbox" id="30minutes" name="30minutes" value="30">
-                        <label for="vehicle1"> 30 minutes</label><br>
-                        <input class="handle-btn" type="checkbox" id="40minutes" name="40minutes" value="40">
-                        <label for="vehicle1"> 40 minutes</label><br>
-                        <input class="handle-btn" type="checkbox" id="50minutes" name="50minutes" value="50">
-                        <label for="vehicle1"> 50 minutes</label><br>
-                        <input class="handle-btn" type="checkbox" id="60minutes" name="60minutes" value="60">
-                        <label for="vehicle1"> 60 minutes</label><br>
-                        <button type="submit" class="btn btn-success" [disabled]="!retardForm.form.valid">Envoyer</button>
-                    </form>
-                
-                </th>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <ul>
-            <li>{{patients[0].name[0].family}}</li>
-            <li>{{patients[1].name[0].family}}</li>
-            <li>{{patients[2].name[0].family}}</li>
-            <li>{{patients[3].name[0].family}}</li>
-            <li>{{patients[4].name[0].family}}</li>
-        </ul>  
+
+<div [hidden]="submitted">
+    <div class="content">
+        <form (ngSubmit)="onSubmit()" #retardForm="ngForm">
+            <div class="dropdown">
+                <p class="patName"><b>Patient <span class="name">{{patient.name[0].family}}
+                            {{patient.name[0].given}}</span></b></p>
+                <p>Heure du rdv : 15h</p>
+                <p> Retard de X minutes </p>
+            </div>
+
+            <div class="checkboxes">
+                <input class="handle-check" type="checkbox" id="10minutes" name="10minutes" value="10">
+                <label for="vehicle1"> 10 minutes</label><br>
+
+                <input class="handle-check" type="checkbox" id="20minutes" name="20minutes" value="20">
+                <label for="vehicle1"> 20 minutes</label><br>
+
+                <input class="handle-check" type="checkbox" id="30minutes" name="30minutes" value="30">
+                <label for="vehicle1"> 30 minutes</label><br>
+
+                <input class="handle-check" type="checkbox" id="40minutes" name="40minutes" value="40">
+                <label for="vehicle1"> 40 minutes</label><br>
+
+                <input class="handle-check" type="checkbox" id="50minutes" name="50minutes" value="50">
+                <label for="vehicle1"> 50 minutes</label><br>
+
+                <input class="handle-check" type="checkbox" id="60minutes" name="60minutes" value="60">
+                <label for="vehicle1"> 60 minutes</label><br>
+            </div>
+
+            <button type="submit" class="handle-btn" [disabled]="!retardForm.form.valid">Envoyer</button>
+
+        </form>
+        <!--<div>
+            <ul>
+                <li>{{patients[0].name[0].family}}</li>
+                <li>{{patients[1].name[0].family}}</li>
+                <li>{{patients[2].name[0].family}}</li>
+                <li>{{patients[3].name[0].family}}</li>
+                <li>{{patients[4].name[0].family}}</li>
+            </ul>  
+        </div>-->
     </div>
+</div>
+
+<div [hidden]="!submitted">
+    <h2>Test validé !</h2>
+    <button class="btn btn-primary" (click)="submitted=false">Retour</button>
 </div>
 
 
 
-<mat-card class="card-bar" color="primary"><p class="card-bar-text">{{doctor.name[0].family}}</p></mat-card>
+<mat-card class="card-bar" color="primary">
+    <p class="card-bar-text">{{doctor.name[0].family}}</p>
+</mat-card>
