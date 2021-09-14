@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -22,7 +25,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule,
+    FormsModule
   ],
 
   providers: [AppComponent],

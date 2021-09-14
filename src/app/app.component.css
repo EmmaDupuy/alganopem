@@ -1,40 +1,70 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  mat-toolbar{
-    background: linear-gradient(to right, #ffb58a, #ff4f63,#ff0065);
-  }
-  .logo{
-    width:100px;
-    height: 100px;
-  }
-  .user-icon{
-    color:#ffffff;
-  }
-  
-  .card-bar{
-      background: linear-gradient(to right, #ff0065, #ff4f63,#ffb58a);
-      margin-top: 50px;
-  }
-  
-  .handle-btn{
-      background-color: #ff4f63;
-      color: white;
-      margin-top: 20px;
-      margin-left: 100px;
-  }
-  
-  .text{
-     margin-left: 10%;
-      margin-top:10px;
-      font-family: roboto;
-      color: #434343;
-  }
-  
-  /* .docName{
-   
-  } */
-  
-  .name{
-      text-transform: uppercase;
-  }
+  flex: 1 1 auto;
+}
+
+.example-form{
+    width: 50%;
+}
+
+.top-name{
+    font-family: roboto;
+    color: white;
+}
+
+mat-toolbar {
+  background: linear-gradient(to right, #ffb58a, #ff4f63, #ff0065);
+}
+
+.logo {
+  margin-top: 5px;
+  display: flex;
+  height: 50px;
+}
+
+.user-icon {
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.titre-retard{
+    position: absolute;
+    left: 20px;
+}
+
+.card-bar {
+  background: linear-gradient(to right, #ff0065, #ff4f63, #ffb58a);
+  margin-top: 50px;
+  width: 100%;
+  padding: 0;
+  bottom: 0;
+  position: fixed;
+  border-radius: 0;
+}
+
+.card-bar-text {
+  padding: 16px;
+  font-family: roboto;
+}
+
+.handle-btn {
+  background-color: #ff4f63;
+  color: white;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.text {
+  text-align: center;
+  margin-top: 10px;
+  font-family: roboto;
+  color: #434343;
+}
+
+table {
+  margin: 0 auto; /* or margin: 0 auto 0 auto */
+}
+
+.name {
+  text-transform: uppercase;
+  font-family: roboto;
+}
