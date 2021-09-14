@@ -10,7 +10,7 @@
 
 <div [hidden]="submitted">
     <div class="content">
-        <form (ngSubmit)="onSubmit()" #retardForm="ngForm">
+        <form class="form" (ngSubmit)="onSubmit()" #retardForm="ngForm">
             <div class="dropdown">
                 <p class="patName"><b>Patient <span class="name">{{patient.name[0].family}}
                             {{patient.name[0].given}}</span></b></p>
@@ -55,7 +55,7 @@
 
 <div [hidden]="!submitted">
     <h2>Test validé !</h2>
-    <button class="btn btn-primary" (click)="submitted=false">Retour</button>
+    <button class="handle-btn" (click)="submitted=false">Retour</button>
 </div>
 
 

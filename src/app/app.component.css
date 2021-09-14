@@ -64,8 +64,8 @@ mat-toolbar {
 }
 
 .handle-btn:hover {
-    background: linear-gradient(#8ac9ff, #4f8dff);;
-    color: #8000ff;
+    background: linear-gradient(#4f8dff, #8000ff);;
+    color: white;
 }
 
 .content {
@@ -74,14 +74,21 @@ mat-toolbar {
   text-align: center;
 }
 
+
 .dropdown{
-    display: inline-block;
     text-align: center;
+    width: 201px;
+    height: 222px;
+    float: left;
+    margin-left: 400px;
+    margin-top: 50px;
 }
 
 .checkboxes{
-    display: inline-block;
     text-align: center;
+    width: 201px;
+    height: 222px;
+    float: left;
 }
 
 table {
