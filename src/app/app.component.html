@@ -16,7 +16,7 @@
             <div class="dropdown">
 
                 <p class="patName">
-                    <b>Patient
+                    <b>Patient : 
                         <span class="name">
                             <select matNativeControl [(ngModel)]="selectedPatient" name="pat" (change)="getAppointmentByPatient()">
                                 <option value="" selected></option>
@@ -25,14 +25,15 @@
                                 </option>
                             </select>
                         </span>
-                    </b>
-                    <span *ngIf="selectedPatient !=  ''"> rdv :
+                    </b><br>
+                    <b>Date du rendez-vous : 
                         <select matNativeControl [(ngModel)]="selectedRDV" name="app">
                             <option *ngFor="let app of rdv" [value]="app.id">
                                 {{app.requestedPeriod[0].start}}
                             </option>
                         </select>
-                    </span>
+                    </b>
+                    
                 </p>
                 <p>Heure du rdv : 15h</p>
                 <p> Retard de {{radioSelected}} minutes </p>

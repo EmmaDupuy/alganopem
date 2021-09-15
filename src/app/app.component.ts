@@ -93,7 +93,7 @@ export class AppComponent {
           ],
           payload: [
             {
-              contentString: this.getSelecteditem() + " id rdv (en cours de test)"
+              contentString: this.getSelecteditem() + "-" + this.selectedRDV
             }
           ]
         },

@@ -87,7 +87,6 @@ mat-toolbar {
 .content {
   font-family: roboto;
   color: #434343;
-  text-align: center;
 }
 
 .sendConfirm {
@@ -97,7 +96,6 @@ mat-toolbar {
 }
 
 .dropdown {
-  text-align: center;
   width: 201px;
   height: 222px;
   position: absolute;
