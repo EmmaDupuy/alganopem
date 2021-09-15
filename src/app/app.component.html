@@ -5,68 +5,60 @@
     <span class="example-spacer"></span>
     <span class="top-name">{{doctor.name[0].family}}
         {{doctor.name[0].given[0]}}</span>
-        <mat-icon class='user-icon'>account_circle</mat-icon>
-    </mat-toolbar>
-    <!--
+    <mat-icon class='user-icon'>account_circle</mat-icon>
+</mat-toolbar>
+<!--
         action="https://fhir.eole-consulting.io/api/communication" method="POST"
     -->
-    <div [hidden]="submitted">
-        <div class="content">
-            <form (ngSubmit)="onSubmit()" #retardForm="ngForm" >
-                <div class="dropdown">
-                    <p class="patName"><b>Patient <span class="name">
-                        <select matNativeControl [(ngModel)]="selectedPatient" name="pat">
-                            <option value="" selected></option>
-                            <option *ngFor="let pat of patients" [value]="pat.id">
-                                {{pat.name[0].family}}
-                            </option>
-                        </select></span></b></p>
-                        <p>Heure du rdv : 15h</p>
-                        <p> Retard de X minutes </p>
-                    </div>
-                    
-                    <div class="checkboxes">
-                        <input class="handle-check" type="checkbox" id="10minutes" name="10minutes" value="10">
-                        <label for="vehicle1"> 10 minutes</label><br>
-                        
-                        <input class="handle-check" type="checkbox" id="20minutes" name="20minutes" value="20">
-                        <label for="vehicle1"> 20 minutes</label><br>
-                        
-                        <input class="handle-check" type="checkbox" id="30minutes" name="30minutes" value="30">
-                        <label for="vehicle1"> 30 minutes</label><br>
-                        
-                        <input class="handle-check" type="checkbox" id="40minutes" name="40minutes" value="40">
-                        <label for="vehicle1"> 40 minutes</label><br>
-                        
-                        <input class="handle-check" type="checkbox" id="50minutes" name="50minutes" value="50">
-                        <label for="vehicle1"> 50 minutes</label><br>
-                        
-                        <input class="handle-check" type="checkbox" id="60minutes" name="60minutes" value="60">
-                        <label for="vehicle1"> 60 minutes</label><br>
-                    </div>
-                    
-                    <button type="submit" class="handle-btn" [disabled]="!retardForm.form.valid">Envoyer</button>
-                    
-                </form>
-                <!--<div>
-                    <ul>
-                        <li>{{patients[0].name[0].family}}</li>
-                        <li>{{patients[1].name[0].family}}</li>
-                        <li>{{patients[2].name[0].family}}</li>
-                        <li>{{patients[3].name[0].family}}</li>
-                        <li>{{patients[4].name[0].family}}</li>
-                    </ul>  
-                </div>-->
+<div [hidden]="submitted">
+    <div class="content">
+        <form (ngSubmit)="onSubmit()" #retardForm="ngForm" >
+            <div class="dropdown">
+
+                <p class="patName">
+                    <b>Patient 
+                        <span class="name">
+                            <select matNativeControl [(ngModel)]="selectedPatient" name="pat">
+                                <option value="" selected></option>
+                                <option *ngFor="let pat of patients" [value]="pat.id">
+                                    {{pat.name[0].family}}
+                                </option>
+                            </select>
+                        </span>
+                    </b>
+                </p>
+                <p>Heure du rdv : 15h</p>
+                <p> Retard de X minutes </p>
+
             </div>
-        </div>
-        
-        <div [hidden]="!submitted">
-            <h2>Test validé !</h2>
-            <button class="btn btn-primary" (click)="submitted=false">Retour</button>
-        </div>
-        
-        
-        
-        <mat-card class="card-bar" color="primary">
-            <p class="card-bar-text">{{doctor.name[0].family}}</p>
-        </mat-card>
+
+            <div class="radios" *ngFor="let item of itemsList">             
+                <input class="handle-check" type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}" (change)="onItemChange(item)"/> 
+                <label>{{item.name}}</label>
+            </div>
+            
+            <button type="submit" class="handle-btn" (ngSubmit)="onSubmit()">Envoyer</button>
+
+        </form>
+        <!--<div>
+            <ul>
+                <li>{{patients[0].name[0].family}}</li>
+                <li>{{patients[1].name[0].family}}</li>
+                <li>{{patients[2].name[0].family}}</li>
+                <li>{{patients[3].name[0].family}}</li>
+                <li>{{patients[4].name[0].family}}</li>
+            </ul>  
+        </div>-->
+    </div>
+</div>
+
+<div [hidden]="!submitted">
+    <h2>Test validé !</h2>
+    <button class="handle-btn" (click)="submitted=false">Retour</button>
+</div>
+
+
+
+<mat-card class="card-bar" color="primary">
+    <p class="card-bar-text">{{doctor.name[0].family}}</p>
+</mat-card>
