@@ -12,6 +12,7 @@ export class AppComponent {
   patient: any = {};
   doctor: any = {};
   patients: any = {};
+  selectedPatient:any={};
   submitted = false;
   constructor(private http: HttpClient) {
     console.log("hello");
@@ -39,6 +40,7 @@ export class AppComponent {
     return (this.http.get(this.apiURL+'/communication').forEach(comm => { console.log(comm);  }));
 
   }
+
 
   onSubmit(){
     this.submitted = true;
