@@ -18,7 +18,7 @@
                 <p class="patName">
                     <b>Patient
                         <span class="name">
-                            <select matNativeControl [(ngModel)]="selectedPatient" name="pat">
+                            <select matNativeControl [(ngModel)]="selectedPatient" name="pat" (change)="getAppointmentByPatient()">
                                 <option value="" selected></option>
                                 <option *ngFor="let pat of patients" [value]="pat.id">
                                     {{pat.name[0].family}}
@@ -26,6 +26,13 @@
                             </select>
                         </span>
                     </b>
+                    <span *ngIf="selectedPatient !=  ''"> rdv :
+                        <select matNativeControl [(ngModel)]="selectedRDV" name="app">
+                            <option *ngFor="let app of rdv" [value]="app.id">
+                                {{app.requestedPeriod[0].start}}
+                            </option>
+                        </select>
+                    </span>
                 </p>
                 <p>Heure du rdv : 15h</p>
                 <p> Retard de {{radioSelected}} minutes </p>

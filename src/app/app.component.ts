@@ -15,6 +15,8 @@ export class AppComponent {
   doctor: any = {};
   patients: any = {};
   selectedPatient: any = {};
+  selectedRDV: String = '';
+  rdv: any = {};
   submitted = false;
   selectedRadio: any = {};
   radios: any[] = ['10', '20', '30', '40', '50', '60'];
@@ -54,6 +56,15 @@ export class AppComponent {
     return (this.http.get(this.apiURL + '/communication').forEach(comm => { console.log(comm); }));
 
   }
+
+  getAppointmentByPatient(){
+    let rep;
+    if (this.selectedPatient!=''){ 
+      rep = this.http.get(this.apiURL+'/appointment?participant.actor.reference=Patient/'+this.selectedPatient+'&status=booked').forEach(data => { console.log("rdv",data); this.rdv = data; });
+    }
+  return rep;
+}
+
 
   getSelecteditem() {
     this.radioSel = ITEMS.find(Item => Item.value === this.radioSelected);
