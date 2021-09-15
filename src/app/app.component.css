@@ -9,10 +9,18 @@
 .top-name{
     font-family: roboto;
     color: white;
+    font-size: small;
 }
 
 mat-toolbar {
   background: linear-gradient(to right, #8000ff, #4f8dff, #8ac9ff);
+  color: white;
+}
+
+.notifRetard{
+  position: absolute;
+  left: 100px;
+  font-size:x-large;
 }
 
 .logo {
@@ -24,11 +32,6 @@ mat-toolbar {
 .user-icon {
   color: #ffffff;
   padding-left: 10px;
-}
-
-.titre-retard{
-    position: absolute;
-    left: 20px;
 }
 
 .card-bar {
@@ -44,12 +47,26 @@ mat-toolbar {
 .card-bar-text {
   padding: 16px;
   font-family: roboto;
+  color: white;
+  font-size: medium;
 }
 
 .handle-check {
     margin-top: 20px;
-    margin-left: 100px;
   }
+
+.button{
+  position: absolute;
+  bottom: 200px;
+  left: 587px;
+
+}
+
+.buttonBack{
+  position: absolute;
+  bottom: 250px;
+  left: 587px;
+}
 
 .handle-btn {
     background: linear-gradient(#8000ff, #4f8dff);
@@ -74,21 +91,28 @@ mat-toolbar {
   text-align: center;
 }
 
+.sendConfirm{
+  position: absolute;
+  top: 150px;
+  left: 371px;
+}
 
 .dropdown{
     text-align: center;
     width: 201px;
     height: 222px;
-    float: left;
-    margin-left: 400px;
-    margin-top: 50px;
+    position : absolute;
+    left : 439px;
+    top : 150px;
 }
 
 .radios{
     text-align: center;
-    width: 201px;
-    height: 222px;
-    float: left;
+    width : 201px;
+    height : 222px;
+    right : 439px;
+    top : 100px;
+    position : absolute;
 }
 
 table {

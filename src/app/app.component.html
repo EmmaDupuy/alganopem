@@ -1,7 +1,7 @@
 <mat-toolbar>
     <img class='logo' src="assets/logo.png">
     <span class="example-spacer"></span>
-    <span>Notification de retard</span>
+    <span class='notifRetard'>Notification de retard</span>
     <span class="example-spacer"></span>
     <span class="top-name">{{doctor.name[0].family}}
         {{doctor.name[0].given[0]}}</span>
@@ -12,11 +12,11 @@
     -->
 <div [hidden]="submitted">
     <div class="content">
-        <form (ngSubmit)="onSubmit()" #retardForm="ngForm" >
+        <form (ngSubmit)="onSubmit()" #retardForm="ngForm">
             <div class="dropdown">
 
                 <p class="patName">
-                    <b>Patient 
+                    <b>Patient
                         <span class="name">
                             <select matNativeControl [(ngModel)]="selectedPatient" name="pat">
                                 <option value="" selected></option>
@@ -28,33 +28,34 @@
                     </b>
                 </p>
                 <p>Heure du rdv : 15h</p>
-                <p> Retard de X minutes </p>
+                <p> Retard de {{radioSelected}} minutes </p>
 
             </div>
 
-            <div class="radios" *ngFor="let item of itemsList">             
-                <input class="handle-check" type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}" (change)="onItemChange(item)"/> 
-                <label>{{item.name}}</label>
+            <div class="radios">
+                <div *ngFor="let item of itemsList">
+                    <input class="handle-check" type="radio" [(ngModel)]="radioSelected" name="list_name"
+                        value="{{item.value}}" (change)="onItemChange(item)" />
+                    <label>{{item.name}}</label>
+                </div>
             </div>
-            
-            <button type="submit" class="handle-btn" (ngSubmit)="onSubmit()">Envoyer</button>
+
+            <div class="button">
+                <button type="submit" class="handle-btn" (ngSubmit)="onSubmit()">Envoyer</button>
+            </div>
 
         </form>
-        <!--<div>
-            <ul>
-                <li>{{patients[0].name[0].family}}</li>
-                <li>{{patients[1].name[0].family}}</li>
-                <li>{{patients[2].name[0].family}}</li>
-                <li>{{patients[3].name[0].family}}</li>
-                <li>{{patients[4].name[0].family}}</li>
-            </ul>  
-        </div>-->
     </div>
 </div>
 
-<div [hidden]="!submitted">
-    <h2>Test validé !</h2>
-    <button class="handle-btn" (click)="submitted=false">Retour</button>
+<div class="content" [hidden]="!submitted">
+    <div class="sendConfirm">
+        <h2>Notification de retard envoyée</h2>
+        <p>Retard de {{radioSelected}} minutes pour le rendez-vous avec le patient {{selectedPatient}}</p>
+    </div>
+    <div class="buttonBack">
+        <button class="handle-btn" (click)="submitted=false">Retour</button>
+    </div>
 </div>
 
 
