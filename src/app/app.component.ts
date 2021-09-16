@@ -16,15 +16,15 @@ export class AppComponent {
   patients: any = {};
   selectedPatient: any = {};
   selectedRDV: String = '';
-  rdv: any = {};
-  submitted = false;
   selectedRadio: any = {};
-  radios: any[] = ['10', '20', '30', '40', '50', '60'];
-  favoriteSeason: string = "";
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   radioSel: any = {};
   radioSelected: string = "";
   radioSelectedString: string = "";
+  rdv: any = {};
+  submitted = false;
+  radios: any[] = ['10', '20', '30', '40', '50', '60'];
+  favoriteSeason: string = "";
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   itemsList: Item[] = ITEMS;
 
   constructor(private http: HttpClient) {
@@ -69,7 +69,6 @@ export class AppComponent {
   getSelecteditem() {
     this.radioSel = ITEMS.find(Item => Item.value === this.radioSelected);
     this.radioSelectedString = JSON.stringify(this.radioSel);
-    return (ITEMS.find(Item => Item.value)?.value);
   }
 
   onItemChange(item: any) {
@@ -93,7 +92,7 @@ export class AppComponent {
           ],
           payload: [
             {
-              contentString: this.getSelecteditem() + "-" + this.selectedRDV
+              contentString: this.radioSelected + "-" + this.selectedRDV
             }
           ]
         },
@@ -108,4 +107,5 @@ export class AppComponent {
     this.submitted = true;
     this.postCommunication();
   }
+
 }
